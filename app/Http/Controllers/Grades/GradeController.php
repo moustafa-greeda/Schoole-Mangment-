@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Grades;
 
-use App\Http\Controllers\Controller;
+use App\Models\Grades\Grade;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreGrades;
-use App\Models\Grades\Grade;
+use App\Models\Classroom\Classroom;
+use App\Http\Controllers\Controller;
 
 class GradeController extends Controller
 {
@@ -13,10 +14,8 @@ class GradeController extends Controller
   {
     toastr()->success('Success Message');
     $Grades= Grade::all();
-    // return view('pages.Grades.Grades' , compact('Grades'));
     toastr()->success('Success Message');
     return view('pages.Grades.Grades' , compact('Grades'));
-
   }
 
   public function create()
@@ -26,59 +25,63 @@ class GradeController extends Controller
 
   public function store(StoreGrades $request)
   {
-    $validated = $request->validated();
+    if(Grade::where('Name->en',$request->Name_en)->orWhere('Name->ar',$request->Name)->exists()){
+      return redirect()->back()->withErrors(trans('Grades_trans.Exists'));
+    }
+    try{
+      $validated = $request->validated();
 
-    $Grade = new Grade();
-    $Grade->Name = ['en'=>$request->Name_en , 'ar'=>$request->Name];
-    $Grade->Note = $request->Notes;
-    $Grade->save();
+      $Grade = new Grade();
+      $Grade->Name = ['en'=>$request->Name_en , 'ar'=>$request->Name];
+      $Grade->Note = $request->Notes;
+      $Grade->save();
 
-    toastr()->success('Success Message');
-    return redirect()->back();
+      return back()->with('success', trans('messages.success'));
+
+
+      return redirect()->back()->with('message','Data added Successfully');
+    } 
+    catch(\Exception $e) {
+        return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+    }
   }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
   public function show($id)
   {
 
   }
-
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function edit($id)
+ 
+  public function update(StoreGrades $request)
   {
+    try{
+      $validated = $request->validated();
+      $Grades    =Grade::findOrFail($request->id);
 
+      $Grades->update([
+        $Grades->Name =['en'=>$request->Name_en , 'ar'=>$request->Name],
+        $Grades->Note = $request->Notes,
+      ]);
+
+      return back()->with('success', trans('messages.Update'));
+
+    }
+    catch(\Exception $e) {
+        return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+    }
   }
 
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function update($id)
+  public function destroy(Request $request)
   {
+    $Classroom_id = Classroom::where('Grade_id' , $request->id)->pluck('Grade_id');
 
-  }
+    if($Classroom_id->count() == 0){
 
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function destroy($id)
-  {
+      $Grades = Grade::findOrFail($request->id)->delete();
+      return back()->with('error', trans('messages.Delete'));
 
+    }else{
+      return back()->with('error', trans('My_Classes_trans.delete_Class_Error'));
+    }
   }
 
 }

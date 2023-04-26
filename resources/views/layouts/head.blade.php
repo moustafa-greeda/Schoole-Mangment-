@@ -11,6 +11,15 @@
 <!--- Style css -->
 <link href="{{ URL::asset('assets/css/style.css') }}" rel="stylesheet">
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0- 
+    alpha/css/bootstrap.css" rel="stylesheet">
+<!-- {{-- toastr --}} -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+
+<!-- Style Wizared -->
+<link href="{{ URL::asset('css/wizard.css') }}" rel="stylesheet" id="bootstrap-css">
+
+
 <!--- Style css -->
 @if (App::getLocale() == 'en')
     <link href="{{ URL::asset('assets/css/ltr.css') }}" rel="stylesheet">

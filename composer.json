@@ -16,9 +16,10 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
+        "livewire/livewire": "*",
         "mcamara/laravel-localization": "^1.7",
         "spatie/laravel-translatable": "^5.2",
-        "yoeunes/toastr": "^2.1"
+        "yoeunes/toastr": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -42,7 +43,7 @@
             "App\\": "app/"
         },
         "classmap": [
-            "database/seeds",
+            "database/seeders/",
             "database/factories"
         ]
     },
