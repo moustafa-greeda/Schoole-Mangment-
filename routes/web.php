@@ -66,5 +66,8 @@ Route::group(
             Route::post('Delete_Attachment' , 'StudentController@Delete_Attachment')->name('Delete_Attachment');
         });
 
-    
+        // ======================== Students Promotion ==============================
+        Route::group(['namespace' => 'Students'],function(){
+            Route::resource('Promotion' , 'PromotionController');
+        });
     });

@@ -32,5 +32,8 @@ return [
      'Student_Edit' => 'Student_Edit',
      'Deleted_Student' => 'Delete student data',
      'Deleted_Student_tilte' => 'Are you sure to delete the student ?',
-
+    //promotion
+    'Old_Grade' => 'Old Grade',
+    'New_Grade' => 'New Grade',
+    'error_not_found_Student' => 'Not Found Data In Table Student',
 ];

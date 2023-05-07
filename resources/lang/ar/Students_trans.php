@@ -32,5 +32,8 @@ return [
      'Student_Edit' => 'تعديل الطلاب',
      'Deleted_Student' => 'حذف بيانات الطالب',
      'Deleted_Student_tilte' => 'هل انت متأكد من حذف الطالب ؟', 
-
+    //الترقيات
+    'Old_Grade' => 'المرحله الدراسية القديمه',
+    'New_Grade' => 'المرحله الدراسيه الجديده',
+    'error_not_found_Student' => 'لايوجد بيانات في جدول الطلاب',
 ];
