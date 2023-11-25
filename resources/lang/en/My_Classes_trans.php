@@ -11,6 +11,7 @@ return [
     'Search_By_Grade'=> 'Search By Grade Name',
     'Warning_Grade'=> 'Are You Sure From Process Delete',
     'submit' => 'submit',
+    'Name_class' => 'Name Class',
     'required_ar'=>'Please Enter The class Name in Arabic',
     'required_en'=>'Please Enter The class Name in English',
     'Name_class_en'=>'Name class en',

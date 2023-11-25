@@ -2,12 +2,15 @@
 
 namespace App\Models\Students;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Student extends Model
+class Student extends Authenticatable
 {
+    use SoftDeletes;
     use HasFactory;
     use HasTranslations;
     public $translatable =['name'];
@@ -39,6 +42,19 @@ class Student extends Model
     // علاقة بين الطلاب واولياء الامور  لجلب اسم ولي لامر في جدول الطلاب
     public function myparent(){
         return $this->belongsTo('App\Models\MyParent\MyParent' , 'parent_id');
+    }
+
+
+    // علاقة بين جدول سدادت الطلاب وجدول الطلاب لجلب اجمالي المدفوعات والمتبقي
+    public function student_account()
+    {
+        return $this->hasMany('App\Models\Fees\StudentAccount', 'student_id');
+
+    }
+
+    //علاقه بين جدول الحضور والطلاب لجلب جدول الخضور
+    public function attendance(){
+        return $this->hasMany('App\Models\Attendances\Attendance' , 'student_id');
     }
 
 }

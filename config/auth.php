@@ -40,6 +40,18 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'teacher' => [
+            'driver' => 'session',
+            'provider' => 'teachers',
+        ],
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
+        'parent' => [
+            'driver' => 'session',
+            'provider' => 'my_parents',
+        ],
 
         'api' => [
             'driver' => 'token',
@@ -69,6 +81,18 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'teachers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Teachers\Teacher::class,
+        ],
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Students\Student::class,
+        ],
+        'my_parents' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\MyParent\Myparent::class,
         ],
 
         // 'users' => [

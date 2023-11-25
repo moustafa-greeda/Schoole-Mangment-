@@ -26,4 +26,12 @@ class section extends Model
     public function teachers(){
         return $this->belongsToMany('App\Models\Teachers\Teacher' , 'teacher_section');
     }
+    // علاقة بين المعلمين والمراحل الدراسيه
+    // public function Grades(){
+    //     return $this->belongsTo('App\Models\Grades\Grade' , 'Grade_id');
+    // }
+    public function Grades()
+    {
+        return $this->belongsTo('App\Models\Grades\Grade','Grade_id');
+    }
 }

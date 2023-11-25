@@ -1,0 +1,107 @@
+<?php
+
+namespace App\Http\Controllers\Teachers\dashboard;
+
+use App\Models\Grades\Grade;
+use Illuminate\Http\Request;
+use App\Models\Quizzes\quizze;
+use App\Models\Sections\Section;
+use App\Models\Subjects\Subject;
+use App\Models\Questions\Question;
+use App\Models\Classroom\Classroom;
+use App\Http\Controllers\Controller;
+
+class QuizzesController extends Controller
+{
+
+    public function index()
+    {
+        $quizzes = quizze::where('teacher_id' , auth()->user()->id)->get();
+        return view('pages.Teachers.dashboard.Quizzes.index' , compact('quizzes'));
+    }
+
+    public function create()
+    {
+        $data['grades'] = Grade::all();
+        $data['subjects'] = Subject::where('teacher_id',auth()->user()->id)->get();
+        return view('pages.Teachers.dashboard.Quizzes.create', $data);
+    }
+
+    public function store(Request $request)
+    {
+        try {
+            $quizzes = new Quizze();
+            $quizzes->name = ['en' => $request->Name_en, 'ar' => $request->Name_ar];
+            $quizzes->subject_id = $request->subject_id;
+            $quizzes->grade_id = $request->Grade_id;
+            $quizzes->classroom_id = $request->Classroom_id;
+            $quizzes->section_id = $request->section_id;
+            $quizzes->teacher_id = auth()->user()->id;
+            $quizzes->save();
+
+            return redirect()->back()->with('success' , trans('messages.success'));
+        }
+        catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
+
+    public function show($id)
+    {
+        $questions = Question::where('quizze_id',$id)->get();
+        $quizz = quizze::findorFail($id);
+        return view('pages.Teachers.dashboard.Questions.index',compact('questions','quizz')); return view('pages.Teachers.dashboard.Questions.create', compact('quizz_id'));
+    }
+
+    public function edit($id)
+    {
+        $quizz = quizze::findorFail($id);
+        $data['grades'] = Grade::all();
+        $data['subjects'] = Subject::where('teacher_id',auth()->user()->id)->get();
+        return view('pages.Teachers.dashboard.Quizzes.edit', $data, compact('quizz'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        try{
+            $quizz = quizze::findorFail($request->id);
+
+            $quizz->name = ['en' => $request->Name_en, 'ar' => $request->Name_ar];
+            $quizz->subject_id = $request->subject_id;
+            $quizz->grade_id = $request->Grade_id;
+            $quizz->classroom_id = $request->Classroom_id;
+            $quizz->section_id = $request->section_id;
+            $quizz->teacher_id = $request->teacher_id;
+            $quizz->save();
+            return redirect()->route('quizzes.index')->with('success' , trans('messages.Update'));
+
+        }
+        catch(\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            Quizze::destroy($id);
+            toastr()->error(trans('messages.Delete'));
+            return redirect()->back();
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
+    // Get Classroom
+    public function getClassrooms($id)
+    {
+        $list_classes = Classroom::where("Grade_id", $id)->pluck("Name_Class", "id");
+        return $list_classes;
+    }
+
+    //Get Sections
+    public function Get_Sections($id){
+
+        $list_sections = Section::where("Class_id", $id)->pluck("Name_Section", "id");
+        return $list_sections;
+    }
+}

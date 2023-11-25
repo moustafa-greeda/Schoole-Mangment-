@@ -26,9 +26,10 @@ class StudentPromotionRepository implements StudentPromotionRepositoryInterface{
             foreach($students as $student){
                 $ids = explode(',' , $student->id);
                 Student::whereIn('id' , $ids)->update([
-                    'Grade_id'     => $request->Grade_id,
-                    'Classroom_id' => $request->Classroom_id ,
-                    'section_id'   => $request->section_id,
+                    'Grade_id'     => $request->Grade_id_new,
+                    'Classroom_id' => $request->Classroom_id_new,
+                    'section_id'   => $request->section_id_new,
+                    'academic_year'=> $request->academic_year_new,
                 ]);
             
                 // insert in to promotions
@@ -37,9 +38,11 @@ class StudentPromotionRepository implements StudentPromotionRepositoryInterface{
                     'from_grade'=>$request->Grade_id,
                     'from_classroom'=>$request->Classroom_id,
                     'from_section'=>$request->section_id,
+                    'academic_year'=>$request->academic_year,
                     'to_grade'=>$request->Grade_id_new,
                     'to_classroom'=>$request->Classroom_id_new,
                     'to_section'=>$request->section_id_new,
+                    'academic_year_new'=>$request->academic_year_new,
                 ]);
             }
 
@@ -50,6 +53,65 @@ class StudentPromotionRepository implements StudentPromotionRepositoryInterface{
             DB::rollback();
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
+    }
+
+    // function show promotion
+    public function create(){
+        $promotions = promotion::all();
+        return view('pages.Students.promotion.mangment' , compact('promotions'));
+    }
+    // function back promotion 
+    public function destroy($request){
+        
+        // DB::beginTransaction();
+        try{
+            
+            // التراجع عن الكل
+            if($request->page_id == 1){
+
+                $promotions = promotion::all();
+
+                foreach($promotions as $promotion){
+
+                    //التحديث في جدول الطلاب
+                    $ids = explode(',' , $promotion->student_id);
+                    Student::whereIn('id' , $ids)->update([
+                        'Grade_id' => $promotion->from_grade ,
+                        'Classroom_id' => $promotion->from_classroom ,
+                        'section_id' => $promotion->from_section ,
+                        'academic_year' => $promotion->academic_year ,
+                    ]);
+
+                    // حذف جدول الترقيات
+                    promotion::truncate();
+                    
+                }
+                // DB::commit();
+                return redirect()->back()->with('error' , trans('messages.delete_promotion'));    
+            }
+            else{
+                $promotion = promotion::findorfail($request->id);
+                Student::where('id' , $promotion->student_id)->update([
+                    'Grade_id' => $promotion->from_grade ,
+                    'Classroom_id' => $promotion->from_classroom ,
+                    'section_id' => $promotion->from_section ,
+                    'academic_year' => $promotion->academic_year ,
+                ]);
+
+                promotion::destroy($request->id);
+                return redirect()->back()->with('error' , trans('messages.delete_promotion'));    
+
+            }
+        }
+        catch (\Exception $e) {
+            // DB::rollback();
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
+
+    public function Graduate(){
+        $Grades = Grade::all();
+        return view('pages.Students.Graduated.create' , compact('Grades'));
     }
 
 }

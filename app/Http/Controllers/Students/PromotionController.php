@@ -8,10 +8,12 @@ use App\Repository\StudentPromotionRepositoryInterface;
 
 class PromotionController extends Controller
 {
+
     protected $Promotion;
     public function __construct(StudentPromotionRepositoryInterface $Promotion ){
         $this->Promotion = $Promotion;
     }
+    
     public function index()
     {
         return $this->Promotion->index();
@@ -19,7 +21,7 @@ class PromotionController extends Controller
 
     public function create()
     {
-        //
+        return $this->Promotion->create();
     }
 
     public function store(Request $request)
@@ -27,9 +29,9 @@ class PromotionController extends Controller
         return $this->Promotion->store($request);
     }
 
-    public function show($id)
+    public function show()
     {
-        //
+        return $this->Promotion->Graduate();
     }
 
     public function edit($id)
@@ -42,8 +44,9 @@ class PromotionController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        return $this->Promotion->destroy($request);
     }
+
 }

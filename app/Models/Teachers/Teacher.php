@@ -2,11 +2,12 @@
 
 namespace App\Models\Teachers;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Teacher extends Model
+class Teacher extends Authenticatable
 {
     use HasFactory;
     use HasTranslations;
@@ -26,4 +27,5 @@ class Teacher extends Model
     public function sections(){
         return $this->belongsToMany('App\Models\Sections\Section' , 'teacher_section');
     }
+
 }
