@@ -2,7 +2,7 @@
                 <ul class="nav navbar-nav side-menu" id="sidebarnav">
                     <!-- menu item Dashboard-->
                     <li>
-                        <a href="{{ url('/dashboard') }}">
+                        <a href="{{route('student_dashboard')}}">
                             <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">{{trans('main_trans.Dashboard')}}</span>
                             </div>
                             <div class="clearfix"></div>
@@ -19,8 +19,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Exams-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('student_exams.index')}}">{{trans('main_trans.Add_Exam')}}</a> </li>
-                            <li> <a href="{{route('Questions.index')}}">{{trans('main_trans.List_Question')}}</a> </li>
+                            <li> <a href="{{route('student_exams.index')}}">{{trans('main_trans.List_Exams')}}</a> </li>
+                            <!-- <li> <a href="{{route('Questions.index')}}">{{trans('main_trans.List_Question')}}</a> </li> -->
                         </ul>
                     </li>
 
@@ -33,7 +33,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Settings-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('settings.index')}}">{{trans('main_trans.List_Setttings')}}</a></li>
+                            <li> <a href="{{route('student_profile.index')}}">{{trans('main_trans.List_Setttings')}}</a></li>
                         </ul>
                     </li>
 

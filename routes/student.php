@@ -24,12 +24,12 @@ use Illuminate\Support\Facades\Route;
     //============================== dashboard ============================
     Route::get('/student/dashboard', function () {
         return view('pages.Students.dashboard');
-    });
+    })->name('student_dashboard');
 
     //============================== exam ============================
     Route::group(['namespace' => 'Students\dashboard'] , function(){
-        // Route::get('greeda' , 'ExamController@index')->name('greeda');
         Route::resource('student_exams' , 'ExamController');
+        Route::resource('student_profile' , 'profileController');
     });
 
 });

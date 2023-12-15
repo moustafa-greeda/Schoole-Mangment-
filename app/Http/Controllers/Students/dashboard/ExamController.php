@@ -21,36 +21,21 @@ class ExamController extends Controller
         return view('pages.Students.dashboard.exams.index' , compact('quizzes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show($quizze_id)
     {
-        //
+        $student_id = auth()->user()->id;
+        return view('pages.Students.dashboard.exams.show' , compact('quizze_id' ,'student_id'));
+
     }
 
     /**

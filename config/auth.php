@@ -92,7 +92,7 @@ return [
         ],
         'my_parents' => [
             'driver' => 'eloquent',
-            'model' => App\Models\MyParent\Myparent::class,
+            'model' => App\Models\MyParent\MyParent::class,
         ],
 
         // 'users' => [

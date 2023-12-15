@@ -39,13 +39,15 @@ use Illuminate\Support\Facades\Route;
         Route::post('Attendance' , 'StudentController@attendance')->name('attendance');
         Route::get('attendance_report','StudentController@attendanceReport')->name('attendance.report');
         Route::post('attendance_search','StudentController@attendanceSearch')->name('attendance.search');
+        // Quizze
         Route::resource('quizzes' , 'QuizzesController');
-        // Route::get('/Get_classrooms/{id}', 'QuizzesController@getClassrooms');
-        // Route::get('/Get_Sections/{id}', 'QuizzesController@Get_Sections');
-        Route::resource('Questions' , 'QuestionController');
+        Route::get('student_quizze/{id}' , 'QuizzesController@student_quizze')->name('student_quizze');
+        Route::post('repeat.quizze/{id}' , 'QuizzesController@repeat_quizze')->name('repeat.quizze');
+        Route::resource('questions' , 'QuestionController');
         // setting 
         Route::get('profile' , 'profileController@index')->name('profile.show');
         Route::post('profile/{id}' , 'profileController@update')->name('profile.update');
+
     });
 
 

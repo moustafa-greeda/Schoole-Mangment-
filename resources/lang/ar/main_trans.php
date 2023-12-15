@@ -44,11 +44,13 @@ return [
 
     'Exams'=>'الامتحانات',
     'Add_Exam' => 'اضافة امتحان',
+    'List_Exams' => 'قائمة الاختبارات',
     'List_Question' => 'قائمة الاسئله',
     
     'library'=>'المكتبة',
     'Onlineclasses'=>'حصص اونلاين',
     'Settings'=>'الاعدادات',
+    'List_Setttings' => 'قائمة الاعدادات',
     'Users'=>'المستخدمين',
     'Copyright' => 'جميع الحقوق محفوظة ',
     'Name_Programer' => '  مصطفي جريده سوفت'

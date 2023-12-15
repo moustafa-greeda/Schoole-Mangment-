@@ -50,11 +50,13 @@ return [
 
     'Exams'=>'Exams',
     'Add_Exam' => 'Add Exam',
+    'List_Exams' => 'List Exams',
     'List_Question' => 'List Question',
     
     'library'=>'Library',
     'Onlineclasses'=>'Online classes',
     'Settings'=>'Settings',
+    'List_Setttings' => 'List Setttings',
     'Users'=>'Users',
     'Copyright' => 'Copyright',
     'Name_Programer' => 'moustafa greeda soft All Rights Reserved'

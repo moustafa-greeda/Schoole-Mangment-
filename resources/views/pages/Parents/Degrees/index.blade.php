@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('css')
     @section('title')
-        قائمة الاختبارات
+        قائمة نتائج الاختبارات
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        قائمة الاختبارات
+        قائمة نتائج الاختبارات
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -27,28 +27,20 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>المادة الدراسية</th>
+                                            <th>اسم الطالب</th>
                                             <th>اسم الاختبار</th>
-                                            <th>دخول / درجة الاختبار</th>
+                                            <th>الدرجة</th>
+                                            <th>تاريخ اجراء الاختبار</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($quizzes as $quizze)
+                                        @foreach($degrees as $degree)
                                             <tr>
                                                 <td>{{ $loop->iteration}}</td>
-                                                <td>{{$quizze->subject->Name}}</td>
-                                                <td>{{$quizze->name}}</td>
-                                                <td>
-                                                    @if ($quizze->degree->count() > 0 && $quizze->id == $quizze->degree[0]->quizze_id)
-                                                        {{$quizze->degree[0]->score;}}
-                                                    @else
-                                                        <a href="{{route('student_exams.show',$quizze->id)}}"
-                                                           class="btn btn-outline-success btn-sm" role="button"
-                                                           aria-pressed="true" onclick="alertAbuse()">
-                                                           <i class="fa fa-bell text-dark"></i>
-                                                        </a>
-                                                    @endif
-                                                </td>
+                                                <td>{{$degree->student->name}}</td>
+                                                <td>{{$degree->quizze->name}}</td>
+                                                <td>{{$degree->score}}</td>
+                                                <td>{{$degree->date}}</td>
                                             </tr>
                                         @endforeach
                                     </table>
@@ -63,11 +55,5 @@
     <!-- row closed -->
 @endsection
 @section('js')
-
-    <script>
-        function alertAbuse() {
-            alert("برجاء عدم إعادة تحميل الصفحة بعد دخول الاختبار - في حال تم تنفيذ ذلك سيتم الغاء الاختبار بشكل اوتوماتيك ");
-        }
-    </script>
 
 @endsection

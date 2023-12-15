@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Teachers\dashboard;
 
 use App\Models\Grades\Grade;
 use Illuminate\Http\Request;
+use App\Models\Degrees\Degree;
 use App\Models\Quizzes\quizze;
 use App\Models\Sections\Section;
 use App\Models\Subjects\Subject;
@@ -64,14 +65,14 @@ class QuizzesController extends Controller
     public function update(Request $request, $id)
     {
         try{
+            
             $quizz = quizze::findorFail($request->id);
-
             $quizz->name = ['en' => $request->Name_en, 'ar' => $request->Name_ar];
             $quizz->subject_id = $request->subject_id;
             $quizz->grade_id = $request->Grade_id;
             $quizz->classroom_id = $request->Classroom_id;
             $quizz->section_id = $request->section_id;
-            $quizz->teacher_id = $request->teacher_id;
+            $quizz->teacher_id = auth()->user()->id;
             $quizz->save();
             return redirect()->route('quizzes.index')->with('success' , trans('messages.Update'));
 
@@ -103,5 +104,17 @@ class QuizzesController extends Controller
 
         $list_sections = Section::where("Class_id", $id)->pluck("Name_Section", "id");
         return $list_sections;
+    }
+
+    // Quizzes Students
+    public function student_quizze($quizz_id){
+        $degrees = Degree::where('quizze_id' , $quizz_id)->get();
+        return view('pages.Teachers.dashboard.Quizzes.student_quizze', compact('degrees'));
+    }
+
+    // repeat Quizze
+    public function repeat_quizze(Request $request){
+        Degree::where('student_id' , $request->student_id)->where('quizze_id' , $request->quizze_id)->delete();
+        return redirect()->back()->with('success' , 'تم اعادة الاختبار بنجاح');
     }
 }

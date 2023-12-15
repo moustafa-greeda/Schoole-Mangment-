@@ -42,4 +42,8 @@ class quizze extends Model
     {
         return $this->belongsTo('App\Models\Sections\Section', 'section_id');
     }
+
+    public function degree(){
+        return $this->hasMany('App\Models\Degrees\Degree');
+    }
 }

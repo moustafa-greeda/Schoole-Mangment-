@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Models\Students\Student;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Parent Routes
+| Teacher Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register API routes for your application. These
@@ -21,10 +23,27 @@ use Illuminate\Support\Facades\Route;
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth:parent' ]
     ], function(){
 
-    //==============================dashboard============================
+    // ==============================   dashboard    ============================
     Route::get('/parent/dashboard', function () {
-        // return view('pages.parent.dashboard');
+        $sons = Student::where('parent_id' , auth()->user()->id)->get();
+        return view('pages.Parents.dashboard' , compact('sons'));
+        
+    })->name('parents');
+    
+    //==============================    parents  ============================
+    Route::group(['namespace' => 'Parents\dashboard'] , function(){
+        Route::get('children' , 'ChildernController@index')->name('sons.index');
+        Route::get('children_result/{id}' , 'ChildernController@children_result')->name('sons.result');
+        Route::get('childern_attendance' , 'ChildernController@children_attendance')->name('sons.attendance');
+        Route::post('children_attendance_search' , 'ChildernController@childern_attendanceSearch')->name('sons.attendance.search');
+        Route::get('fees_invoices' , 'ChildernController@fees_invoices')->name('sons.invoices');
+        Route::get('receiptStudent/{id}' , 'ChildernController@receiptStudent')->name('sons.receipt');
+        Route::get('parent_profile' , 'ChildernController@profile')->name('parents.profile');
+        Route::post('update_profile/{id}' , 'ChildernController@update')->name('profile.update.parent');
     });
+    
+
+
 
 });
 

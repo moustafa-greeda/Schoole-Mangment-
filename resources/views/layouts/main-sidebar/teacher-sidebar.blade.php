@@ -50,7 +50,7 @@
             </a>
             <ul id="reports" class="collapse" data-parent="#sidebarnav">
                 <li><a href="{{route('attendance.report')}}">تقرير الحضور والغياب</a></li>
-                <li><a href="#">تقرير الامتحانات</a></li>
+                <!-- <li><a href="#">تقرير الامتحانات</a></li> -->
             </ul>
 
         </li>
