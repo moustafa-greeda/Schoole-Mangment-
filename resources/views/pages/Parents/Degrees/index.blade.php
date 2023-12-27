@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('css')
     @section('title')
-        قائمة نتائج الاختبارات
+        {{trans('Parent_trans.List_Degree_Exams')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        قائمة نتائج الاختبارات
+        {{trans('Parent_trans.List_Degree_Exams')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -27,10 +27,10 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>اسم الطالب</th>
-                                            <th>اسم الاختبار</th>
-                                            <th>الدرجة</th>
-                                            <th>تاريخ اجراء الاختبار</th>
+                                            <th>{{trans('Fee_trans.Student_Name')}}</th>
+                                            <th>{{trans('exams.Name_Exam')}}</th>
+                                            <th>{{trans('Question_trans.Degree')}}</th>
+                                            <th>{{trans('exams.Date_Test_Taken')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>

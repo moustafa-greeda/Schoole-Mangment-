@@ -54,11 +54,31 @@ return [
     'List_Question' => 'List Question',
     
     'library'=>'Library',
+    'List_Books' => 'List Books',
     'Onlineclasses'=>'Online classes',
     'Settings'=>'Settings',
     'List_Setttings' => 'List Setttings',
     'Users'=>'Users',
     'Copyright' => 'Copyright',
-    'Name_Programer' => 'moustafa greeda soft All Rights Reserved'
+    'Name_Programer' => 'moustafa greeda soft All Rights Reserved',
+
+    // login
+    'Login_Student' => 'Login Student',
+    'Login_Parent' => 'Login Parent',
+    'Login_Teacher' => 'Login Teacher',
+    'Login_Admin' => 'Login Admin',
+    'Email' => 'Email',
+    'Password' => 'Password',
+    'Member_Me' => 'Member Me',
+    'Forget_Password' => 'Forget Password',
+    'Entry' => 'Entry',
+    'Select_Login_Way' => 'Select Login Way',
+    'Student' => 'Student',
+    'Parent' => 'Parent',
+    'Teacher' => 'Teacher',
+    'Admin' => 'Admin',
+    'Greeda_soft_for_school_mangment' => 'Greeda soft for School Mangment',
+
+
 
 ];

@@ -16,26 +16,26 @@
         <!-- الابناء-->
         <li>
             <a href="{{route('sons.index')}}"><i class="fa fa-book-open"></i><span
-                    class="right-nav-text">الابناء</span></a>
+                    class="right-nav-text">{{trans('Parent_trans.Sons')}}</span></a>
         </li>
 
         <!-- تقرير الحضور والغياب-->
         <li>
             <a href="{{route('sons.attendance')}}"><i class="fa fa-book-open"></i><span
-                    class="right-nav-text">تقرير الحضور والغياب</span></a>
+                    class="right-nav-text">{{trans('Teacher_trans.Report_Attendance')}}</span></a>
         </li>
 
         <!-- تقرير المالية-->
         <li>
             <a href="{{route('sons.invoices')}}"><i class="fa fa-book-open"></i><span
-                    class="right-nav-text">تقرير المالية</span></a>
+                    class="right-nav-text">{{trans('Parent_trans.Report_Fees')}}</span></a>
         </li>
 
 
         <!-- Settings-->
         <li>
             <a href="{{route('parents.profile')}}"><i class="fa fa-id-card-alt"></i><span
-                    class="right-nav-text">الملف الشخصي</span></a>
+                    class="right-nav-text">{{trans('Teacher_trans.Profile')}}</span></a>
         </li>
 
     </ul>

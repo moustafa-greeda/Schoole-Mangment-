@@ -39,8 +39,11 @@ return [
     'Choose' => 'اختيار من القائمة',
     'Warning_Parent' => 'هل انت متاكد من حفظ البيانات ؟',
 
-
-
-
+    // dashboard
+    'Sons' => 'الابناء',
+    'Report_Fees' => 'تقرير المالبه',
+    'Exam_Count' => 'عدد الاختبارات',
+    'show_Degree_Exams' => 'عرض نتائج الاختبار',
+    'List_Degree_Exams' => 'قائمة نتائج الاختبارات',
 
 ];

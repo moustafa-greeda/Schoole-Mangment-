@@ -41,4 +41,7 @@ return [
     'Message_Delete' => 'هل انت متاكد من عمليه الحذف؟',
     'Close' => 'غلق',
     'submit' => 'تاكيد',
+
+    // dashboard
+    'Description' => 'البيان',
 ];

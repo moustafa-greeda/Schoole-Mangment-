@@ -14,5 +14,16 @@ return [
     'Gender'=>'النوع',
     'Joining_Date'=>'تاريخ التعين',
     'Address'=>'العنوان',
+    'List_Attendance' => 'قائمة الحضور والغياب',
+    'Report' => 'التقرير',
+    'Report_Attendance' => 'تقرير الحضور والغياب',
+    'Profile' => 'الملف الشخصي',
+    'Welcome' => 'مرحبا بك',
+    'date_of_day' => 'تاريخ اليوم',
+    'Teacher' => ' معلم',
+    'Name_User_ar' => 'اسم المستخدم باللغه العربيه',
+    'Name_User_en' => 'اسم المستخدم باللغه الانجليزيه',
+    'Show_Password' => 'اظهار كلمة المرور',
+    'Edit_Data' => 'تعديل البيانات',
 
 ];

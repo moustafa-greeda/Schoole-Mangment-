@@ -7,12 +7,12 @@ return [
     'Note' => 'Note',
     'Proccessing' => 'Proccesses',
     // 
-    'Study_Fee' => 'Study_Fee',
-    'Add_New_Fee' => 'Add_New_Fee',
+    'Study_Fee' => 'Study Fee',
+    'Add_New_Fee' => 'Add New Fee',
     'Name' => 'Name',
     'Grade' => 'Grade',
     'Classroom' => 'Classroom',
-    'Acadimic_Year' => 'Acadimic_Year',
+    'Acadimic_Year' => 'Acadimic Year',
     'Edit_Study_Fee' => 'Edit Study Fee',
     'Delete_Fee' => 'Deleted Fee',
     // 
@@ -30,8 +30,8 @@ return [
     'Delete_Processing_Fee' => 'Delete Processing Fee',
     // 
     'Payment' => 'Payment',
-    'Edit_Payment' => 'Edit_Payment',
-    'Delete_Payment' =>'Delete_Payment',
+    'Edit_Payment' => 'Edit Payment',
+    'Delete_Payment' =>'Delete Payment',
 
     'Add_Fee' => 'Add Fee',
     'Name_ar' => 'Name_ar',
@@ -41,4 +41,7 @@ return [
     'Message_Delete' => 'Message Delete',
     'Close' => 'Close',
     'submit' => 'submit',
+
+    // dashboard
+    'Description' => 'Description',
 ];

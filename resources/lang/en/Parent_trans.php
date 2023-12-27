@@ -36,6 +36,12 @@ return [
     'Finish' => 'Finish',
     'Choose' => 'Choose from List',
     'Warning_Parent' => 'Are you sure from Save Data?',
+    // dashboard
+    'Sons' => 'Sons',
+    'Report_Fees' => 'Report Fees',
+    'Exam_Count' => 'Exam Count',
+    'show_Degree_Exams' => 'show Degree Exams',
+    'List_Degree_Exams' => 'List Degree Exams',
 
 
 ];

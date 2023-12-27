@@ -2,13 +2,13 @@
 @section('css')
     
 @section('title')
-    اضافة سؤال جديد
+    {{trans('Question_trans.Add_New_Question')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    اضافة سؤال جديد
+    {{trans('Question_trans.Add_New_Question')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -35,7 +35,7 @@
                                 <div class="form-row">
 
                                     <div class="col">
-                                        <label for="title">اسم السؤال</label>
+                                        <label for="title"> {{trans('Question_trans.Question')}}</label>
                                         <input type="text" name="title" id="input-name"
                                                class="form-control form-control-alternative" autofocus>
                                     </div>
@@ -44,7 +44,7 @@
 
                                 <div class="form-row">
                                     <div class="col">
-                                        <label for="title">الاجابات</label>
+                                        <label for="title">{{trans('Question_trans.Answers')}} : <label class='text-danger'>{{trans('Question_trans.Warm_Answer')}}</label></label>
                                         <textarea name="answers" class="form-control" id="exampleFormControlTextarea1"
                                                   rows="4"></textarea>
                                     </div>
@@ -53,7 +53,7 @@
 
                                 <div class="form-row">
                                     <div class="col">
-                                        <label for="title">الاجابة الصحيحة</label>
+                                        <label for="title">{{trans('Question_trans.Right_Answers')}}</label>
                                         <input type="text" name="right_answer" id="input-name"
                                                class="form-control form-control-alternative" autofocus>
                                     </div>
@@ -63,10 +63,10 @@
                                 <div class="form-row">
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="Grade_id">اسم الاختبار : <span
+                                            <label for="Grade_id"> {{trans('exams.Name_Exam')}} : <span
                                                     class="text-danger">*</span></label>
                                             <select class="custom-select mr-sm-2" name="quizze_id">
-                                                <option selected disabled>حدد اسم الاختبار...</option>
+                                                <option selected disabled>{{trans('Question_trans.Select_Name_Exam')}}...</option>
                                                 @foreach($quizzes as $quizze)
                                                     <option value="{{ $quizze->id }}">{{ $quizze->name }}</option>
                                                 @endforeach
@@ -75,9 +75,9 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="Grade_id">الدرجة : <span class="text-danger">*</span></label>
+                                            <label for="Grade_id">{{trans('Question_trans.Degree')}} : <span class="text-danger">*</span></label>
                                             <select class="custom-select mr-sm-2" name="score">
-                                                <option selected disabled> حدد الدرجة...</option>
+                                                <option selected disabled>{{trans('Question_trans.Select_Degree')}}...</option>
                                                 <option value="5">5</option>
                                                 <option value="10">10</option>
                                                 <option value="15">15</option>
@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">حفظ البيانات</button>
+                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">{{trans('Grades_trans.submit')}}</button>
                             </form>
                         </div>
                     </div>

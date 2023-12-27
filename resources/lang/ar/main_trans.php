@@ -4,8 +4,8 @@ return [
 
     'Dashboard'=>'الرئيسية',
     'Dashboard_page'=>'لوحة التحكم',
-    'Main_title'=>'برنامج مورا سوفت لادارة المدارس',
-    'Programname' => 'برنامج مورا سوفت لادارة المدارس',
+    'Main_title'=>'برنامج جريده سوفت لادارة المدارس',
+    'Programname' => 'برنامج جريده سوفت لادارة المدارس',
     'change_language'=>'تغير اللغة',
     'Grades'=>'المراحل الدراسية',
     'Grades_list'=>'قائمة المراحل الدراسية',
@@ -48,12 +48,29 @@ return [
     'List_Question' => 'قائمة الاسئله',
     
     'library'=>'المكتبة',
+    'List_Books' => 'قائمة الكتب',
     'Onlineclasses'=>'حصص اونلاين',
     'Settings'=>'الاعدادات',
     'List_Setttings' => 'قائمة الاعدادات',
     'Users'=>'المستخدمين',
     'Copyright' => 'جميع الحقوق محفوظة ',
-    'Name_Programer' => '  مصطفي جريده سوفت'
+    'Name_Programer' => '  مصطفي جريده سوفت',
 
+    // login
+    'Login_Student' => 'تسجيل دخول طالب',
+    'Login_Parent' => 'تسجيل دخول ولي امر',
+    'Login_Teacher' => 'تسجيل دخول معلم',
+    'Login_Admin' => 'تسجيل دخول ادمن',
+    'Email' => 'البريد الالكتروني',
+    'Password' => 'الرقم السري',
+    'Member_Me' => 'تذكرني',
+    'Forget_Password' => 'نسيت كلمة المرور',
+    'Entry' => 'دخول',
+    'Select_Login_Way' => 'حدد طريقة الدخول',
+    'Student' => 'طالب',
+    'Parent' => 'ولي امر',
+    'Teacher' => 'معلم',
+    'Admin' => 'ادمن',
+    'Greeda_soft_for_school_mangment'=> 'برنامج جريده سوفت لادارة المدارس'
 
 ];

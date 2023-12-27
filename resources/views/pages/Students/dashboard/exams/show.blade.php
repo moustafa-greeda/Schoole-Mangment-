@@ -3,13 +3,13 @@
     @livewireStyles
     
     @section('title')
-         اجراء الاختبار
+        {{trans('Students_trans.Taking_Exam')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        اجراء الاخنبار 
+        {{trans('Students_trans.Taking_Exam')}} 
     @stop
     <!-- breadcrumb -->
 @endsection

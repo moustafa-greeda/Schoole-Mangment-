@@ -2,13 +2,13 @@
 @section('css')
     
 @section('title')
-    قائمة الحضور والغياب للطلاب
+    {{trans('Teacher_trans.List_Attendance')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    قائمة الحضور والغياب للطلاب
+    {{trans('Teacher_trans.List_Attendance')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -33,7 +33,7 @@
         </div>
     @endif
 
-    <h5 style="font-family: 'Cairo', sans-serif;color: red"> تاريخ اليوم : {{ date('Y-m-d') }}</h5>
+    <h5 style="font-family: 'Cairo', sans-serif;color: red"> {{trans('Teacher_trans.date_of_day')}} : {{ date('Y-m-d') }}</h5>
     <form method="post" action="{{ route('attendance') }}" autocomplete="off">
 
         @csrf
@@ -48,7 +48,7 @@
                 <th class="alert-success">{{ trans('Students_trans.Grade') }}</th>
                 <th class="alert-success">{{ trans('Students_trans.classrooms') }}</th>
                 <th class="alert-success">{{ trans('Students_trans.section') }}</th>
-                <th class="alert-success">الحضور والغياب</th>
+                <th class="alert-success">{{trans('main_trans.Attendance')}}</th>
             </tr>
             </thead>
             <tbody>
@@ -68,7 +68,7 @@
                                    {{ $attendance->attendence_status == 1 ? 'checked' : '' }}
                                 @endforeach
                                 class="leading-tight" type="radio" value="presence">
-                                <span class="text-success">حضور</span>
+                                <span class="text-success">{{trans('main_trans.Parents')}}</span>
                             </label>
 
                             <label class="ml-4 block text-gray-500 font-semibold">
@@ -77,7 +77,7 @@
                                     {{ $attendance->attendence_status == 0 ?'checked':''; }}
                                 @endforeach
                                 class="leading-tight" type="radio" value="absent" >
-                                <span class="text-danger">غياب</span>
+                                <span class="text-danger">{{trans('main_trans.Parents')}}</span>
                             </label>
                           
                             <input type="hidden" name="student_id[]" value="{{ $student->id }}">

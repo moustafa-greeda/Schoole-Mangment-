@@ -30,6 +30,8 @@ use Illuminate\Support\Facades\Route;
     Route::group(['namespace' => 'Students\dashboard'] , function(){
         Route::resource('student_exams' , 'ExamController');
         Route::resource('student_profile' , 'profileController');
+        Route::get('Book_student' , 'BookController@index')->name('Book_student.index');
+        Route::get('Subjects_student' , 'SubjectController@index')->name('Subjects_Student.index');
     });
 
 });

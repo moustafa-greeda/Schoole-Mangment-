@@ -42,7 +42,7 @@
             <div class="page-title" >
                 <div class="row">
                     <div class="col-sm-6" >
-                        <h4 class="mb-0" style="font-family: 'Cairo', sans-serif">لوحة تحكم الادمن</h4>
+                        <h4 class="mb-0" style="font-family: 'Cairo', sans-serif"></h4>{{trans('admin_trans.Admin_Dashboard')}}</h4>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
@@ -62,12 +62,12 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">عدد الطلاب</p>
+                                    <p class="card-text text-dark">{{trans('admin_trans.Student_Count')}}</p>
                                     <h4>{{\App\Models\Students\Student::count()}}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fa fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('Students.index')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
+                                <i class="fa fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('Students.index')}}" target="_blank"><span class="text-danger">{{trans('admin_trans.Veiw_Data')}}</span></a>
                             </p>
                         </div>
                     </div>
@@ -82,12 +82,12 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">عدد المعلمين</p>
+                                    <p class="card-text text-dark">{{trans('admin_trans.Teacher_Count')}}</p>
                                     <h4>{{\App\Models\Teachers\Teacher::count()}}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fa fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('Teachers.index')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
+                                <i class="fa fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('Teachers.index')}}" target="_blank"><span class="text-danger">{{trans('admin_trans.Veiw_Data')}}</span></a>
                             </p>
                         </div>
                     </div>
@@ -102,12 +102,12 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">عدد اولياء الامور</p>
+                                    <p class="card-text text-dark">{{trans('admin_trans.Parents_Count')}}</p>
                                     <h4>{{\App\Models\MyParent\MyParent::count()}}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fa fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('add_parent')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
+                                <i class="fa fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('add_parent')}}" target="_blank"><span class="text-danger">{{trans('admin_trans.Veiw_Data')}}</span></a>
                             </p>
                         </div>
                     </div>
@@ -119,15 +119,16 @@
                                 <div class="float-left">
                                     <span class="text-primary">
                                         <i class="fa fa-chalkboard highlight-icon" aria-hidden="true"></i>
-                                    </span>
+                                    </span>                                    <p class="card-text text-dark">{{trans('admin_trans.Classrooms_Count')}}</p>
+
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">عدد الفصول الدراسية</p>
+                                    <p class="card-text text-dark">{{trans('admin_trans.Classrooms_Count')}}</p>
                                     <h4>{{\App\Models\Sections\Section::count()}}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fa fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('Sections.index')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
+                                <i class="fa fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('Sections.index')}}" target="_blank"><span class="text-danger">{{trans('admin_trans.Veiw_Data')}}</span></a>
                             </p>
                         </div>
                     </div>
@@ -144,7 +145,7 @@
                             <div class="tab nav-border" style="position: relative;">
                                 <div class="d-block d-md-flex justify-content-between">
                                     <div class="d-block w-100">
-                                        <h5 style="font-family: 'Cairo', sans-serif" class="card-title">اخر العمليات علي النظام</h5>
+                                        <h5 style="font-family: 'Cairo', sans-serif" class="card-title">{{trans('admin_trans.Last_Processing')}}</h5>
                                     </div>
                                     <div class="d-block d-md-flex nav-tabs-custom">
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -152,24 +153,24 @@
                                             <li class="nav-item">
                                                 <a class="nav-link active show" id="students-tab" data-toggle="tab"
                                                    href="#students" role="tab" aria-controls="students"
-                                                   aria-selected="true"> الطلاب</a>
+                                                   aria-selected="true">{{trans('admin_trans.Students')}}</a>
                                             </li>
 
                                             <li class="nav-item">
                                                 <a class="nav-link" id="teachers-tab" data-toggle="tab" href="#teachers"
-                                                   role="tab" aria-controls="teachers" aria-selected="false">المعلمين
+                                                   role="tab" aria-controls="teachers" aria-selected="false">{{trans('admin_trans.Teachers')}}
                                                 </a>
                                             </li>
 
                                             <li class="nav-item">
                                                 <a class="nav-link" id="parents-tab" data-toggle="tab" href="#parents"
-                                                   role="tab" aria-controls="parents" aria-selected="false">اولياء الامور
+                                                   role="tab" aria-controls="parents" aria-selected="false">{{trans('admin_trans.Parents')}}
                                                 </a>
                                             </li>
 
                                             <li class="nav-item">
                                                 <a class="nav-link" id="fee_invoices-tab" data-toggle="tab" href="#fee_invoices"
-                                                   role="tab" aria-controls="fee_invoices" aria-selected="false">الفواتير
+                                                   role="tab" aria-controls="fee_invoices" aria-selected="false">{{trans('admin_trans.Fees')}}
                                                 </a>
                                             </li>
 
@@ -185,13 +186,13 @@
                                                 <thead>
                                                 <tr  class="table-info text-danger">
                                                     <th>#</th>
-                                                    <th>اسم الطالب</th>
-                                                    <th>البريد الالكتروني</th>
-                                                    <th>النوع</th>
-                                                    <th>المرحلة الدراسية</th>
-                                                    <th>الصف الدراسي</th>
-                                                    <th>القسم</th>
-                                                    <th>تاريخ الاضافة</th>
+                                                    <th>{{trans('admin_trans.Student_Name')}}</th>
+                                                    <th>{{trans('admin_trans.Email')}}</th>
+                                                    <th>{{trans('admin_trans.Gender')}}</th>
+                                                    <th>{{trans('admin_trans.Grade')}}</th>
+                                                    <th>{{trans('admin_trans.Classroom')}}</th>
+                                                    <th>{{trans('admin_trans.Section')}}</th>
+                                                    <th>{{trans('admin_trans.Date_Added')}}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -206,7 +207,7 @@
                                                         <td>{{$student->section->Name_Section}}</td>
                                                         <td class="text-success">{{$student->created_at}}</td>
                                                         @empty
-                                                            <td class="alert-danger" colspan="8">لاتوجد بيانات</td>
+                                                            <td class="alert-danger" colspan="8">{{trans('admin_trans.No_Data')}}</td>
                                                     </tr>
                                                 @endforelse
                                                 </tbody>
@@ -221,11 +222,11 @@
                                                 <thead>
                                                 <tr  class="table-info text-danger">
                                                     <th>#</th>
-                                                    <th>اسم المعلم</th>
-                                                    <th>النوع</th>
-                                                    <th>تاريخ التعين</th>
-                                                    <th>التخصص</th>
-                                                    <th>تاريخ الاضافة</th>
+                                                    <th>{{trans('admin_trans.Teacher_Name')}}</th>
+                                                    <th>{{trans('admin_trans.Gender')}}</th>
+                                                    <th>{{trans('admin_trans.Date_of_hiring')}}</th>
+                                                    <th>{{trans('admin_trans.Specialization')}}</th>
+                                                    <th>{{trans('admin_trans.Date_Added')}}</th>
                                                 </tr>
                                                 </thead>
 
@@ -239,7 +240,7 @@
                                                         <td>{{$teacher->specializations->Name}}</td>
                                                         <td class="text-success">{{$teacher->created_at}}</td>
                                                         @empty
-                                                            <td class="alert-danger" colspan="8">لاتوجد بيانات</td>
+                                                            <td class="alert-danger" colspan="8">{{trans('admin_trans.No_Data')}}</td>
                                                     </tr>
                                                     </tbody>
                                                 @endforelse
@@ -254,11 +255,11 @@
                                                 <thead>
                                                 <tr  class="table-info text-danger">
                                                     <th>#</th>
-                                                    <th>اسم ولي الامر</th>
-                                                    <th>البريد الالكتروني</th>
-                                                    <th>رقم الهوية</th>
-                                                    <th>رقم الهاتف</th>
-                                                    <th>تاريخ الاضافة</th>
+                                                    <th>{{trans('admin_trans.Parent_Name')}}</th>
+                                                    <th>{{trans('admin_trans.Email')}}</th>
+                                                    <th>{{trans('admin_trans.Identification_Number')}}</th>
+                                                    <th>{{trans('admin_trans.Phone_Number')}}</th>
+                                                    <th>{{trans('admin_trans.Date_Added')}}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -271,7 +272,7 @@
                                                         <td>{{$parent->Phone_Father}}</td>
                                                         <td class="text-success">{{$parent->created_at}}</td>
                                                         @empty
-                                                            <td class="alert-danger" colspan="8">لاتوجد بيانات</td>
+                                                            <td class="alert-danger" colspan="8">{{trans('admin_trans.No_Data')}}</td>
                                                     </tr>
                                                 @endforelse
                                                 </tbody>
@@ -286,14 +287,13 @@
                                                 <thead>
                                                 <tr  class="table-info text-danger">
                                                     <th>#</th>
-                                                    <th>تاريخ الفاتورة</th>
-                                                    <th>اسم الطالب</th>
-                                                    <th>المرحلة الدراسية</th>
-                                                    <th>الصف الدراسي</th>
-                                                    <th>القسم</th>
-                                                    <th>نوع الرسوم</th>
-                                                    <th>المبلغ</th>
-                                                    <th>تاريخ الاضافة</th>
+                                                    <th>{{trans('admin_trans.Invoice_Date')}}</th>
+                                                    <th>{{trans('admin_trans.Student_Name')}}</th>
+                                                    <th>{{trans('admin_trans.Grade')}}</th>
+                                                    <th>{{trans('admin_trans.Classroom')}}</th>
+                                                    <th>{{trans('admin_trans.Type_of_Fees')}}</th>
+                                                    <th>{{trans('admin_trans.Amount')}}</th>
+                                                    <th>{{trans('admin_trans.Date_Added')}}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -301,12 +301,16 @@
                                                     <tr>
                                                         <td>{{$loop->iteration}}</td>
                                                         <td>{{$section->invoice_date}}</td>
+                                                        <td>{{$section->student->name}}</td>
+                                                        <td>{{$section->grade->Name}}</td>
                                                         <td>{{$section->classroom->Name_Class}}</td>
+                                                        <td>{{$section->description}}</td>
+                                                        <td>{{$section->amount}}</td>
                                                         <td class="text-success">{{$section->created_at}}</td>
                                                     </tr>
                                                 @empty
                                                     <tr>
-                                                        <td class="alert-danger" colspan="9">لاتوجد بيانات</td>
+                                                        <td class="alert-danger" colspan="9">{{trans('admin_trans.No_Data')}}</td>
                                                     </tr>
                                                 @endforelse
                                                 </tbody>

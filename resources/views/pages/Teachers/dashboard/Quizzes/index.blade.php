@@ -2,13 +2,13 @@
 @section('css')
     
 @section('title')
-    قائمة الاختبارات
+    {{trans('main_trans.List_Exams')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    قائمة الاختبارات
+    {{trans('main_trans.List_Exams')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -22,7 +22,7 @@
                         <div class="card card-statistics h-100">
                             <div class="card-body">
                                 <a href="{{route('quizzes.create')}}" class="btn btn-success btn-sm" role="button"
-                                   aria-pressed="true">اضافة اختبار جديد</a><br><br>
+                                   aria-pressed="true">{{trans('main_trans.Add_Exam')}}</a><br><br>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                                            data-page-length="50"
@@ -30,12 +30,12 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>اسم الاختبار</th>
-                                            <th>اسم المعلم</th>
-                                            <th>المرحلة الدراسية</th>
-                                            <th>الصف الدراسي</th>
-                                            <th>القسم</th>
-                                            <th>العمليات</th>
+                                            <th>{{trans('exams.Name_Exam')}}</th>
+                                            <th>{{trans('Teacher_trans.Name_Teacher')}}</th>
+                                            <th>{{trans('main_trans.Grades')}}</th>
+                                            <th>{{trans('main_trans.classes')}}</th>
+                                            <th>{{trans('main_trans.sections')}}</th>
+                                            <th>{{trans('Grades_trans.Processes')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -53,15 +53,15 @@
                                                             class="fa fa-edit"></i></a>
                                                     <button type="button" class="btn btn-danger btn-sm"
                                                             data-toggle="modal"
-                                                            data-target="#delete_exam{{ $quizze->id }}" title="حذف"><i
+                                                            data-target="#delete_exam{{ $quizze->id }}" title="{{trans('Grades_trans.Delete')}}"><i
                                                             class="fa fa-trash"></i>
                                                     </button>
                                                     <a href="{{route('quizzes.show',$quizze->id)}}"
-                                                        class="btn btn-warning btn-sm" title="عرض الاسئلة" role="button" aria-pressed="true"><i
+                                                        class="btn btn-warning btn-sm" title="{{trans('exams.Show_Question')}} " role="button" aria-pressed="true"><i
                                                         class="fa fa-binoculars"></i>
                                                     </a>
                                                     <a href="{{route('student_quizze' , $quizze->id)}}"
-                                                       class="btn btn-primary btn-sm" title="عرض الطلاب المختبرين" role="button" aria-pressed="true"><i
+                                                       class="btn btn-primary btn-sm" title="{{trans('exams.Show_Student_Examed')}}" role="button" aria-pressed="true"><i
                                                             class="fa fa-street-view"></i>
                                                     </a>
                                                 </td>
@@ -76,7 +76,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 style="font-family: 'Cairo', sans-serif;"
-                                                                    class="modal-title" id="exampleModalLabel">حذف اختبار</h5>
+                                                                    class="modal-title" id="exampleModalLabel">{{trans('exams.Delete_Exam')}} </h5>
                                                                 <button type="button" class="close" data-dismiss="modal"
                                                                         aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>

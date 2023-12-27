@@ -57,22 +57,28 @@ login-->
                 <div class="col-lg-4 col-md-6 bg-white">
                     <div class="login-fancy pb-40 clearfix">
                         @if($type == 'student')
-                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول طالب</h3>
+                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">{{trans('main_trans.Login_Student')}}</h3>
                         @elseif($type == 'parent')
-                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول ولي امر</h3>
+                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">{{trans('main_trans.Login_Parent')}}</h3>
                         @elseif($type == 'teacher')
-                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول معلم</h3>
+                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">{{trans('main_trans.Login_Teacher')}}</h3>
                         @else
-                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول ادمن</h3>
+                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">{{trans('main_trans.Login_Admin')}}</h3>
+                        @endif
+
+                        @if (\Session::has('message'))
+                                <div class="alert alert-danger">
+                                 <li>{!! \Session::get('message') !!}</li>
+                                </div>
                         @endif
                         <form method="POST" action="{{route('login')}}">
                             @csrf
 
                             <div class="section-field mb-20">
-                                <label class="mb-10" for="name">البريدالالكتروني*</label>
+                                <label class="mb-10" for="name">{{trans('main_trans.Email')}} *</label>
                                 <input id="email" type="email"
                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                       value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                       value="{{ old('email') }}" required autocomplete="off" autofocus>
                                 <input type="hidden" value="{{$type}}" name="type">
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -83,7 +89,7 @@ login-->
                             </div>
 
                             <div class="section-field mb-20">
-                                <label class="mb-10" for="Password">كلمة المرور * </label>
+                                <label class="mb-10" for="Password">{{trans('main_trans.Password')}} * </label>
                                 <input id="password" type="password"
                                        class="form-control @error('password') is-invalid @enderror" name="password"
                                        required autocomplete="current-password">
@@ -98,11 +104,11 @@ login-->
                             <div class="section-field">
                                 <div class="remember-checkbox mb-30">
                                     <input type="checkbox" class="form-control" name="two" id="two" />
-                                    <label for="two"> تذكرني</label>
-                                    <a href="#" class="float-right">هل نسيت كلمةالمرور ؟</a>
+                                    <label for="two">{{trans('main_trans.Member_Me')}}</label>
+                                    <a href="#" class="float-right">{{trans('main_trans.Forget_Password')}}</a>
                                 </div>
                             </div>
-                            <button class="button"><span>دخول</span><i class="fa fa-check"></i></button>
+                            <button class="button"><span>{{trans('main_trans.Entry')}}</span><i class="fa fa-check"></i></button>
                         </form>
                     </div>
                 </div>

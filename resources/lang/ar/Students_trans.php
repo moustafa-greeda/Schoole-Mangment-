@@ -55,4 +55,11 @@ return [
     'message_return_promotion' => 'هل انت متاكد من عملية تراجع الطالب ؟',
     'message_close_graduated' =>'هل انت متاكد من الغاء عملية التخرج',
     'Delete_Student' => 'حذف الطالب',
+
+
+    // dashboard 
+    'Entry_Or_Degree_Exame' => 'دخول / اجراء اختبار',
+    'Warm_Manipulate' => 'برجاء عدم إعادة تحميل الصفحة بعد دخول الاختبار - في حال تم تنفيذ ذلك سيتم الغاء الاختبار بشكل اوتوماتيك',
+    'Taking_Exam' => 'اجراء الاختبار',
+
 ];

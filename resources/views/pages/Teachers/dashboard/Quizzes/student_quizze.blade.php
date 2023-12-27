@@ -2,13 +2,13 @@
 @section('css')
 
     @section('title')
-        قائمة الطلاب المختبره
+        {{trans('exams.Students_Examed')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        قائمة الطلاب المختبره
+        {{trans('exams.Students_Examed')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -28,12 +28,12 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>اسم الطالب</th>
-                                            <th>اخر سؤال</th>
-                                            <th>الدرجة</th>
-                                            <th>تلاعب</th>
-                                            <th>تاريخ اجراء الاختبار</th>
-                                            <th>العمليات</th>
+                                            <th>{{trans('admin_trans.Student_Name')}}</th>
+                                            <th>{{trans('exams.Last_Question')}}</th>
+                                            <th>{{trans('Question_trans.Degree')}}</th>
+                                            <th>{{trans('exams.Manipulate')}}</th>
+                                            <th>{{trans('exams.Date_Test_Taken')}}</th>
+                                            <th>{{trans('Grades_trans.Processes')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -44,9 +44,9 @@
                                                 <td>{{$degree->question_id}}</td>
                                                 <td>{{$degree->score}}</td>
                                                 @if($degree->abuse == 0)
-                                                    <td style="color: green">لا يوجد تلاعب</td>
+                                                    <td style="color: green">{{trans('exams.There_Is_Not_Manipulation')}}</td>
                                                 @else
-                                                    <td style="color: red"> يوجد تلاعب</td>
+                                                    <td style="color: red">{{trans('exams.There_Is_Manipulation')}}</td>
                                                 @endif
                                                 <td>{{$degree->date}}</td>
                                                 <td>
@@ -66,7 +66,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 style="font-family: 'Cairo', sans-serif;"
-                                                                    class="modal-title" id="exampleModalLabel">فتح إعادة الاختبار للطالب</h5>
+                                                                    class="modal-title" id="exampleModalLabel">{{trans('exams.Repeat_Exam_Student')}}</h5>
                                                                 <button type="button" class="close" data-dismiss="modal"
                                                                         aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>

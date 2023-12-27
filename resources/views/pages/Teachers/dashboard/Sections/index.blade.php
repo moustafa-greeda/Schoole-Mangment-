@@ -2,13 +2,13 @@
 @section('css')
 
 @section('title')
-  الاقسام الدراسية
+    {{trans('main_trans.sections')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    الاقسام الدراسية
+    {{trans('main_trans.sections')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -26,8 +26,8 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>اسم المرحلة</th>
-                                <th>اسم القسم</th>
+                                <th>{{trans('main_trans.Grades')}}</th>
+                                <th>{{trans('admin_trans.Section_Name')}}</th>
                             </tr>
                             </thead>
                             <tbody>

@@ -20,7 +20,29 @@
                         </a>
                         <ul id="Exams-icon" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('student_exams.index')}}">{{trans('main_trans.List_Exams')}}</a> </li>
-                            <!-- <li> <a href="{{route('Questions.index')}}">{{trans('main_trans.List_Question')}}</a> </li> -->
+                        </ul>
+                    </li>
+                    <!-- Subjects-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#subject-icon">
+                            <div class="pull-left"><i class="fa-solid fa-film"></i><span class="right-nav-text">{{trans('main_trans.Subjects')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="subject-icon" class="collapse" data-parent="#sidebarnav"> 
+                            <li> <a href="{{route('Subjects_Student.index')}}"><i class="fas fa-book-open"></i><span class="right-nav-text">{{trans('main_trans.Subjects')}}</span></a> </li>
+                        </ul>
+                    </li>
+
+                    <!-- library-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#library-icon">
+                            <div class="pull-left"><i class="fa fa-book"></i><span class="right-nav-text">{{trans('main_trans.library')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="library-icon" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('Book_student.index')}}">{{trans('main_trans.List_Books')}}</a> </li>
                         </ul>
                     </li>
 

@@ -55,4 +55,9 @@ return [
     'message_return_promotion' => 'Are You Sure From Return Promotion',
     'message_close_graduated' => 'Are You Sure From Close All Graduated',
     'Delete_Student' => 'Delete Student',
+
+    // dashboard 
+    'Entry_Or_Degree_Exame' => 'Entry Or Degree Exame',
+    'Warm_Manipulate' => 'Please do not reload the page after taking the test - if the test is executed, it will be automatically cancelled',
+    'Taking_Exam' => 'Taking the Exam'
 ];

@@ -2,13 +2,13 @@
 @section('css')
    
 @section('title')
-    قائمة الاسئلة
+    {{trans('main_trans.List_Question')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-قائمة الاسئلة : <span class="text-danger">{{$quizz->name}}</span>
+    {{trans('main_trans.List_Question')}} : <span class="text-danger">{{$quizz->name}}</span>
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -21,7 +21,7 @@
                     <div class="col-xl-12 mb-30">
                         <div class="card card-statistics h-100">
                             <div class="card-body">
-                                <a href="{{route('questions.show',$quizz->id)}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">اضافة سؤال جديد</a><br><br>
+                                <a href="{{route('questions.show',$quizz->id)}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">{{trans('Question_trans.Add_New_Question')}}</a><br><br>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                                            data-page-length="50"
@@ -29,12 +29,12 @@
                                         <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">السؤال</th>
-                                            <th scope="col">الاجابات</th>
-                                            <th scope="col">الاجابة الصحيحة</th>
-                                            <th scope="col">الدرجة</th>
-                                            <th scope="col">اسم الاختبار</th>
-                                            <th scope="col">العمليات</th>
+                                            <th scope="col">{{trans('Question_trans.Question')}}</th>
+                                            <th scope="col">{{trans('Question_trans.Answers')}}</th>
+                                            <th scope="col">{{trans('Question_trans.Right_Answers')}}</th>
+                                            <th scope="col">{{trans('Question_trans.Degree')}}</th>
+                                            <th scope="col">{{trans('exams.Name_Exam')}}</th>
+                                            <th scope="col">{{trans('Grades_trans.Processes')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>

@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('css')
     @section('title')
-        قائمة الاختبارات
+        {{trans('main_trans.List_Exams')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-        قائمة الاختبارات
+        {{trans('main_trans.List_Exams')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -27,9 +27,9 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>المادة الدراسية</th>
-                                            <th>اسم الاختبار</th>
-                                            <th>دخول / درجة الاختبار</th>
+                                            <th>{{trans('exams.Name_subject')}}</th>
+                                            <th>{{trans('exams.Name_Exam')}}</th>
+                                            <th>{{trans('Students_trans.Entry_Or_Degree_Exame')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -66,7 +66,7 @@
 
     <script>
         function alertAbuse() {
-            alert("برجاء عدم إعادة تحميل الصفحة بعد دخول الاختبار - في حال تم تنفيذ ذلك سيتم الغاء الاختبار بشكل اوتوماتيك ");
+            alert("{{trans('Students_trans.Warm_Manipulate')}}");
         }
     </script>
 

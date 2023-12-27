@@ -50,10 +50,10 @@
                                                 <td>
                                                     <div class="dropdown show">
                                                         <a class="btn btn-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            العمليات
+                                                            {{trans('Subjects.Proccess')}}
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                            <a class="dropdown-item" href="{{route('sons.result' , $student->id)}}"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp;عرض نتائج الاختبارات</a>
+                                                            <a class="dropdown-item" href="{{route('sons.result' , $student->id)}}"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp;{{trans('Parent_trans.show_Degree_Exams')}}</a>
                                                         </div>
                                                     </div>
                                                 </td>
